@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Button } from "@/components";
+// import { Button } from "@/components/Button";
+const App = () => {
+  const [count, setCount] = useState(0);
 
-function App() {
+  const handleClick = () => {
+    setCount(count + 1);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="max-w-md mx-auto p-4">
+      <h1 className="text-3xl font-bold mb-4">Hello World!</h1>
+      <p className="mb-4">You have clicked the button {count} times.</p>
+      <Button
+        onClick={handleClick}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Click me!
+      </Button>
     </div>
   );
-}
+};
 
 export default App;
